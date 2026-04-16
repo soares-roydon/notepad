@@ -27,7 +27,7 @@ function Notepad() {
     // 3. Update your state buckets with the new data.
     // 4. Turn your loading state to false.
 
-    fetch(`http://localhost:3000/${filename}`)
+    fetch(`https://notepad-awzd.onrender.com/${filename}`)
       .then(function (response) {
         return response.json();
       })
@@ -44,7 +44,7 @@ function Notepad() {
   }, [note]);
 
   function syncText() {
-    fetch(`http://localhost:3000/${filename}`, {
+    fetch(`https://notepad-awzd.onrender.com/${filename}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,7 +107,7 @@ function Notepad() {
             </span>
             <span className="hidden sm:inline text-slate-300">•</span>
             <span className="hidden sm:inline">
-              {console.log(note)} characters
+              characters
             </span>
           </div>
           <div className="flex items-center space-x-2">
