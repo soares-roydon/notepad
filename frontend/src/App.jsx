@@ -1,12 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import Notepad from "./Notepad";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Notepad from "./pages/Notepad";
 
-function App() {
+export default function App() {
   return (
-    <Routes>
-      <Route path="/:filename" element={<Notepad />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:filename" element={<Notepad />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
