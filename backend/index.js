@@ -1,8 +1,10 @@
 const express = require("express")
 const Note = require("./config/db_connect")
+const cors = require("cors")
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.get("/:filename", async function (req, res) {
     const filename = req.params.filename
